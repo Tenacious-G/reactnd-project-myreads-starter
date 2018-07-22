@@ -26,4 +26,7 @@ render() {
       </div>
 	)
   }
+}
+
+  
 export default Search
