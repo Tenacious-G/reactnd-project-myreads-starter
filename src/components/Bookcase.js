@@ -20,7 +20,7 @@ class Bookcase extends React.Component {
 					.map (book => (
 						<li key={book.id}>
 							<Book 
-
+								book={book}
 							/>
 						</li>					
 						)
@@ -46,7 +46,7 @@ class Bookcase extends React.Component {
 					.map (book => (
 						<li key={book.id}>
 							<Book 
-
+								book={book}
 							/>
 						</li>					
 						)
@@ -72,7 +72,7 @@ class Bookcase extends React.Component {
 					.map (book => (
 						<li key={book.id}>
 							<Book 
-
+								book={book}
 							/>
 						</li>					
 						)
