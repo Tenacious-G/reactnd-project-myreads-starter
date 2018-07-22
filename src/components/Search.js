@@ -18,16 +18,19 @@ class Search extends React.Component {
 	updateSearchedBooks = (query) => {
 		if (query){
 		BooksAPI.search(query).then((searchedBooks) => {
-			this.setState({searchedBooks: searchedBooks})
+			if(searchedBooks.error){
+				this.setState({searchedBooks: []});
+			} else
+			this.setState({searchedBooks: searchedBooks});
 		})
 		} else{
-			this.setState({searchedBooks: []})
+			this.setState({searchedBooks: []});
 		}
 	}
 	
 render() {
 	if (this.state.query){
-		const match = new RegExp(escapeRegExp(this.state.query), 'i')
+		const match = new RegExp(escape-RegExp(this.state.query), 'i')
 	} else{
 		this.setState({searchedBooks: this.searchedBooks})
 	}
