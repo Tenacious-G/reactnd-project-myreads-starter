@@ -12,6 +12,7 @@ class Search extends React.Component {
 		this.setState({
 			query: query
 		})
+		this.updateSearchedBooks(query);
 	}
 	
 	updateSearchedBooks = (query) => {
@@ -26,7 +27,7 @@ class Search extends React.Component {
 	
 render() {
 	if (this.state.query){
-		const match = new regExp(escapeRegExp(this.state.query), 'i')
+		const match = new RegExp(escapeRegExp(this.state.query), 'i')
 	} else{
 		this.setState({searchedBooks: this.searchedBooks})
 	}
