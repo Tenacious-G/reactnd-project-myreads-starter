@@ -23,10 +23,12 @@ class BooksApp extends React.Component {
 		})
   }
 	render() {
-		console.log(this.state.books);
+		// console.log(this.state.books);
 	return (
 		<div className="app">
-			<Bookcase />
+			<Bookcase 
+				books = {this.state.books}
+			/>
 		</div>
 		)
 	}
