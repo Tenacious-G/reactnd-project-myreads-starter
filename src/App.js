@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Bookcase from './components/Bookcase'
 import Search from './components/Search'
+// import Book from './Book'
 
 
 class BooksApp extends React.Component {
@@ -32,13 +33,11 @@ class BooksApp extends React.Component {
   }
   
 	render() {
-		// console.log(this.state.books);
+
 	return (
 		<div className="app">
-			<Bookcase 
-				books = {this.state.books}
-				moveShelf ={this.moveShelf}
-			/>
+
+		<Search />
 		</div>
 		)
 	}
