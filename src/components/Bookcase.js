@@ -22,6 +22,7 @@ class Bookcase extends React.Component {
 							<Book 
 								book={book}
 								moveShelf ={this.props.moveShelf}
+								currentShelf = "currentlyReading"
 							/>
 						</li>					
 						)
@@ -49,6 +50,7 @@ class Bookcase extends React.Component {
 							<Book 
 								book={book}
 								moveShelf ={this.props.moveShelf}
+								currentShelf = "wantToRead"
 							/>
 						</li>					
 						)
@@ -72,10 +74,11 @@ class Bookcase extends React.Component {
 				  {this.props.books
 				  	.filter(book => book.shelf === 'read')
 					.map (book => (
-						<li key={book.id}>
+						<li key= {book.id}>
 							<Book 
-								book={book}
-								moveShelf ={this.props.moveShelf}
+								book= {book}
+								moveShelf= {this.props.moveShelf}
+								currentShelf= "read"
 							/>
 						</li>					
 						)
