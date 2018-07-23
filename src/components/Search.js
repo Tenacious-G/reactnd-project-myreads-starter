@@ -29,11 +29,7 @@ class Search extends React.Component {
 	}
 	
 render() {
-	if (this.state.query){
-		const match = new RegExp(escape-RegExp(this.state.query), 'i')
-	} else{
-		this.setState({searchedBooks: this.searchedBooks})
-	}
+
     return (
 	  <div className="search-books">
 		<div className="search-books-bar">
@@ -57,7 +53,7 @@ render() {
 						book = {searchedBook}
 					/>
 				</li>
-			})  
+			}) 
 		  }
 		  </ol>
 	    </div>
