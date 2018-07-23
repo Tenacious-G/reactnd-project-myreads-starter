@@ -52,13 +52,25 @@ render() {
 	      <ol className="books-grid">
 		  {
 			this.state.searchedBooks.map(searchedBook => {
-				<li key={searchedBook.id}>
+				let shelf = "none";
+				/*put book on same shelf as book in the bookcase*/
+				this.props.books.map(book => (
+					book.id === searchedBook.id ?
+					shelf = book.shelf :
+					shelf = "none"
+			));
+				return (
+					<li key={searchedBook.id}>
 					<Book 
 						book = {searchedBook}
+						moveShelf={this.props.moveShelf}
+						currentShelf = {shelf}
 					/>
 				</li>
-			}) 
-		  }
+				);
+			})
+		  } 
+		  
 		  </ol>
 	    </div>
       </div>

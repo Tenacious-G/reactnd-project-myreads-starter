@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class Book extends React.Component {
 
   render() {
-  //handle cases where there is no thumbnail}
+	  {/*handle cases where there is no thumbnail*/}
 	  let displayedThumbnail = this.props.book.imageLinks ?
 	  this.props.book.imageLinks.thumbnail :
 	  '';

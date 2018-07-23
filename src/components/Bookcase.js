@@ -90,7 +90,7 @@ class Bookcase extends React.Component {
               </div>
             </div>
           </div>		  
-		  //add a book from the bookcase to a shelf
+		  {/*add a book from the bookcase to a shelf*/}
           <div className="open-search">
             <Link 
 				to="/search"
