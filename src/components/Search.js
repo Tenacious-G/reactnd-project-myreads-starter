@@ -19,6 +19,7 @@ class Search extends React.Component {
 	updateSearchedBooks = (query) => {
 		if (query){
 		BooksAPI.search(query).then((searchedBooks) => {
+			{/* catch exception, leave "searched" array empty*/}
 			if(searchedBooks.error){
 				this.setState({searchedBooks: []});
 			} else
@@ -34,6 +35,7 @@ render() {
     return (
 	  <div className="search-books">
 		<div className="search-books-bar">
+		{/*go back to bookcase*/}
 		<Link 
 			to="/"
 			className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close
@@ -53,7 +55,7 @@ render() {
 		  {
 			this.state.searchedBooks.map(searchedBook => {
 				let shelf = "none";
-				/*put book on same shelf as book in the bookcase*/
+				{/*put book onto chosen shelf in the bookcase*/}
 				this.props.books.map(book => (
 					book.id === searchedBook.id ?
 					shelf = book.shelf :

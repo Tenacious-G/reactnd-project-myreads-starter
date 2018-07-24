@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import {BrowserRouter} from 'react-router-dom'
 
+	{/*use BrowserRouter so that browser navigation buttons behave as expected*/}
 ReactDOM.render(
 	<BrowserRouter>
 		<App />

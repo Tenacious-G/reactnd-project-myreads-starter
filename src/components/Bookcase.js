@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 class Bookcase extends React.Component {
   render() {
-	  console.log(this.props.books)
+	  {/*display books on three shelves*/}
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -16,6 +16,7 @@ class Bookcase extends React.Component {
                 <h2 className="bookshelf-title">Currently Reading</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
+				  {/*only show books with shelf value equal to currentlyReading*/}
 				  {this.props.books
 				  	.filter(book => book.shelf === 'currentlyReading')
 					.map (book => (
@@ -90,7 +91,7 @@ class Bookcase extends React.Component {
               </div>
             </div>
           </div>		  
-		  {/*add a book from the bookcase to a shelf*/}
+		  {/* go to search through all books*/}
           <div className="open-search">
             <Link 
 				to="/search"
