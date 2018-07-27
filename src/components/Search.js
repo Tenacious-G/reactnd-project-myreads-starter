@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 
 class Search extends React.Component {
 	state={
+		//search page query field, array of books matching the query
 		query: '',
 		searchedBooks: []
 	}
@@ -13,9 +14,11 @@ class Search extends React.Component {
 		this.setState({
 			query: query
 		})
+
 		this.updateSearchedBooks(query);
 	}
 	
+	//display books matching the search query	
 	updateSearchedBooks = (query) => {
 		if (query){
 		BooksAPI.search(query).then((searchedBooks) => {
@@ -46,6 +49,7 @@ render() {
 			type="text"
 			placeholder="Search by title or author"
 			value = {this.state.query}
+			//change the value of the query as it is typed
 			onChange = {(event) => this.updateQuery(event.target.value)}
 			/>
 		  </div>
@@ -55,7 +59,7 @@ render() {
 		  {
 			this.state.searchedBooks.map(searchedBook => {
 				let shelf = "none";
-				{/*put book onto chosen shelf in the bookcase*/}
+				{/*put filtered book onto chosen shelf in the bookcase*/}
 				this.props.books.map(book => (
 					book.id === searchedBook.id ?
 					shelf = book.shelf :
