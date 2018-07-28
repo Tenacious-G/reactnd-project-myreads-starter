@@ -1,19 +1,24 @@
 import React, {Component} from 'react'
+import Placeholder from '../icons/no-thumbnail-image.png'
 
 class Book extends React.Component {
 
   render() {
-	  /*handle cases where there is no thumbnail*/
+	  {/*handle cases where there is no thumbnail*/}
 	  let displayedThumbnail = this.props.book.imageLinks ?
 	  this.props.book.imageLinks.thumbnail :
-	  '';
+	  Placeholder;
+
 	  
     return (
 		<div className="book">
 		  <div className="book-top">
 		  {/*book covers do not appear unless width and height are stated here
-			lucia_gm in #fend-p7-myreads Slack forum 15/07/18*/}
-			<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}")` }}></div>
+			lucia_gm in #fend-p7-myreads Slack forum 15/07/18
+			missing thumbnails handling : dominicom in #fend-p7-myreads Slack forum 25/07/18
+			https://googledevndscholars.slack.com/archives/CA36ZFP4P/p1532526770000504?thread_ts=1532520106.000294&cid=CA36ZFP4P
+			*/}
+			<div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${displayedThumbnail}")`  }}></div>
 			<div className="book-shelf-changer">
 			  <select
 				onChange = {(event) => this.props.moveShelf(
